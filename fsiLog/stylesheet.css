@@ -11,9 +11,6 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: 'HACKED','Varela', sans-serif;
-    height: 99vh;
-    overflow-y:hidden;
-    overflow-x:hidden;
     color:#49F300;
     left: 0;
     top: 0;
