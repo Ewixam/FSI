@@ -6,8 +6,10 @@
     padding: 0;
 }
 
-html, body {
+body {
     background: black;
+    margin: 0;
+    min-height: 100vh;
     font-family: 'HACKED','Varela', sans-serif;
     height: 99vh;
     overflow-y:hidden;
@@ -55,12 +57,15 @@ div.Page{
 
     display: flex;
     justify-content: space-around;
-    height: auto;
-    margin-top:5%;
+    height: 100%;
+    width: auto;
+    padding-top:5%;
+    border: 2px solid #49F300;
 }
 
 input{
     display: flex;
+    padding-left: 2%;
 }
 
 input.inpt{
@@ -70,5 +75,26 @@ input.inpt{
     height: 5vh;
     font-family: 'Kernel Panic NBP', sans-serif;
     font-size:1em;
-    color: ;
+    color: #49F300;
+}
+
+input.btn{
+    border: 2px solid #49F300;
+    background-color: black;
+    color: #49F300;
+    width: 10vw;
+    height: 5vh;
+    font-family: 'Kernel Panic NBP', sans-serif;
+
+}
+
+
+input.inpt:focus{
+    outline:none;
+    border: 2px solid #49F300;
+}
+
+input.inpt::placeholder{
+    color: #49F300;
+    opacity: 0.30;
 }
