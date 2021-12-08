@@ -1,3 +1,11 @@
+*
+{
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
 html, body {
     background: black;
     font-family: 'HACKED','Varela', sans-serif;
@@ -5,6 +13,8 @@ html, body {
     overflow-y:hidden;
     overflow-x:hidden;
     color:#49F300;
+    left: 0;
+    top: 0;
   }
 
 
@@ -21,7 +31,7 @@ html, body {
 
     color : #49F300;
     display: inline-block;
-    font-family: 'HACKED','Varela', sans-serif;
+    font-family: 'HACKED', sans-serif;
     font-size:300% ;
 }
 
@@ -32,14 +42,33 @@ html, body {
     align-items: center;
 
 }
+
+hr {
+    border-color: #49F300;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+
 div.Page{
 
     display: flex;
     justify-content: space-around;
-
+    height: auto;
+    margin-top:5%;
 }
 
 input{
-
     display: flex;
+}
+
+input.inpt{
+    background:#090909;
+    border: 2px solid #49F300;
+    width: 20vw;
+    height: 5vh;
+    font-family: 'Kernel Panic NBP', sans-serif;
+    font-size:1em;
+    color: ;
 }
