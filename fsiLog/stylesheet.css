@@ -1,0 +1,45 @@
+html, body {
+    background: black;
+    font-family: 'HACKED','Varela', sans-serif;
+    height: 99vh;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    color:#49F300;
+  }
+
+
+
+#header{
+
+    display:flex;
+    justify-content: space-between;
+
+}
+
+
+#titre{
+
+    color : #49F300;
+    display: inline-block;
+    font-family: 'HACKED','Varela', sans-serif;
+    font-size:300% ;
+}
+
+#dedi{
+
+    color:#49F300;
+    display:flex;
+    align-items: center;
+
+}
+div.Page{
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+input{
+
+    display: flex;
+}
