@@ -9,11 +9,9 @@
 body {
     background: black;
     margin: 0;
-    min-height: 100vh;
-    font-family: 'HACKED','Varela', sans-serif;
+    /* min-height: 100vh; */
+    font-family: 'HACKED','AndaleMono', sans-serif;
     color:#49F300;
-    left: 0;
-    top: 0;
   }
 
 
@@ -22,19 +20,21 @@ body {
 
     display:flex;
     justify-content: space-between;
-
+    height: 10vh;
 }
 
 
-#titre{
+
+.titre{
 
     color : #49F300;
     display: inline-block;
     font-family: 'HACKED', sans-serif;
-    font-size:300% ;
+    font-size:48px ;
+    font-weight: normal;
 }
 
-#dedi{
+.dedi{
 
     color:#49F300;
     display:flex;
@@ -54,8 +54,7 @@ div.Page{
 
     display: flex;
     justify-content: space-around;
-    height: 100%;
-    width: auto;
+    height: 90vh;
     padding-top:5%;
     border: 2px solid #49F300;
 }
@@ -63,6 +62,8 @@ div.Page{
 input{
     display: flex;
     padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center;
 }
 
 input.inpt{
