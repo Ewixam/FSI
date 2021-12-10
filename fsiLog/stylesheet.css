@@ -10,53 +10,90 @@ body {
     background: black;
     margin: 0;
     /* min-height: 100vh; */
-    font-family: 'HACKED','AndaleMono', sans-serif;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
     color:#49F300;
   }
 
 
 
-#header{
-
-    display:flex;
+.header{
+    display: flex;
     justify-content: space-between;
-    height: 10vh;
+    height: 9vh;
+    align-items: center;
+    width: 97%;
+    margin: auto;
 }
 
-
-
 .titre{
-
-    color : #49F300;
-    display: inline-block;
+    color: #49F300;
     font-family: 'HACKED', sans-serif;
-    font-size:48px ;
-    font-weight: normal;
+    font-size: 72px;
 }
 
 .dedi{
-
     color:#49F300;
     display:flex;
     align-items: center;
-
+    border: 1px solid;
+    padding: 0.8% 1.5% 0.6%;
+}
+h3
+{
+    font-size: 1.8em;
+    color: black;
+    position: relative;
+    top: 20%;
+    left: 10%;
+}
+.trait {
+    width: 100%;
+    height: 0.8%;
+    background: #49F300;
+    margin-bottom: 8%;
 }
 
-hr {
-    border-color: #49F300;
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .verticalLine {
     border-left: thick solid #ff0000;
 }
 
+.forme
+{
+    height: 6%;
+    background: #49F300;
+    content: " ";
+    clip-path: polygon(42% 0, 53% 102%, 102% 102%, 0 102%, 0 0);
+}
+
+.log
+{
+    width: 33%;
+    height: 50%;
+    height: 100%;
+}
+
 div.Page{
+    display: flex;
+    height: 91vh;
+    padding-top: 5%;
+    border: 2px solid #49F300;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+div.forms{
 
     display: flex;
     justify-content: space-around;
-    height: 90vh;
-    padding-top:5%;
-    border: 2px solid #49F300;
+    height: 70%;
 }
 
 input{
@@ -64,35 +101,45 @@ input{
     padding-left: 2%;
     padding-right: 2%;
     justify-content: center;
+    font-family: 'Kernel Panic NBP', sans-serif;
+    background:#090909;
+    border: 2px solid #49F300;
+    color: #49F300;
 }
 
 input.inpt{
-    background:#090909;
-    border: 2px solid #49F300;
     width: 20vw;
     height: 5vh;
-    font-family: 'Kernel Panic NBP', sans-serif;
-    font-size:1em;
-    color: #49F300;
+    margin: 6% 0% 0% 0%;
+    font-size: 150%;
 }
 
 input.btn{
-    border: 2px solid #49F300;
-    background-color: black;
-    color: #49F300;
-    width: 10vw;
+    width: 13vw;
     height: 5vh;
-    font-family: 'Kernel Panic NBP', sans-serif;
-
+    margin: 15% 0% 0% 0%;
+    font-size: 150%;
+    padding: 2.3%;
 }
-
 
 input.inpt:focus{
     outline:none;
-    border: 2px solid #49F300;
 }
 
 input.inpt::placeholder{
     color: #49F300;
     opacity: 0.30;
+}
+
+.para{
+    color: #525252;
+    opacity: 0.8;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-size: 135%;
 }
