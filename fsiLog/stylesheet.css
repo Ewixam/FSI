@@ -18,25 +18,72 @@ body {
 
 .header{
     display: flex;
-    justify-content: space-between;
     height: 9vh;
-    align-items: center;
-    width: 97%;
-    margin: auto;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .titre{
     color: #49F300;
     font-family: 'HACKED', sans-serif;
     font-size: 72px;
+    position: relative;
+    top: 10%;
+    left: 1%;
+}
+
+.header-droite{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.divOblique{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px;
+    justify-content: space-between;
+}
+
+.obliqueDiv{
+    content: " ";
+    background-color: #49F300;
+    height: 119%;
+    width: 0.4%;
+    left: -3%;
+    position: relative;
+    transform: rotateZ(330deg);
+}
+
+.Obliques{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.oblique{
+    content: " ";
+    background-color: #49F300;
+    height: 100%;
+    width: 3px;
+    transform: rotateZ(330deg);
+    margin-right: 3%;
 }
 
 .dedi{
-    color:#49F300;
-    display:flex;
+    color: #49F300;
+    display: flex;
     align-items: center;
     border: 1px solid;
-    padding: 0.8% 1.5% 0.6%;
+    padding: 2.4% 2% 2.2%;
+    width: 20%;
+    height: 50%;
+    justify-content: center;
+    margin-right: 3%;
 }
 h3
 {
@@ -113,15 +160,6 @@ input.inpt{
     margin: 6% 0% 0% 0%;
     font-size: 150%;
 }
-
-input.btn{
-    width: 13vw;
-    height: 5vh;
-    margin: 15% 0% 0% 0%;
-    font-size: 150%;
-    padding: 2.3%;
-}
-
 input.inpt:focus{
     outline:none;
 }
@@ -142,4 +180,5 @@ input.inpt::placeholder{
     align-content: center;
     margin: auto;
     font-size: 135%;
+    text-transform: uppercase;
 }

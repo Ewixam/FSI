@@ -1,4 +1,4 @@
-html, body {
+/* html, body {
   background: black;
   font-family: 'HACKED','AndaleMono', sans-serif;
   height: 99vh;
@@ -17,7 +17,7 @@ html, body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-}
+} */
 .btn {
   cursor: pointer;
   font-size: 18px;
@@ -27,6 +27,7 @@ html, body {
   letter-spacing: 0.1em;
   border: 1px solid #49f300;
   display: inline-block;
+  margin: 12% 0% 0% 0%;
 }
 .glitch {
   position: relative;
@@ -36,11 +37,23 @@ html, body {
   padding: 0.6em 1.5em;
   font-family: 'Kernel Panic NBP';
 }
+.glitch input {
+  display: block;
+  padding: 0.6em 1.5em;
+  font-family: 'Kernel Panic NBP';
+}
+
 .glitch span:nth-child(1), .glitch span:nth-child(2) {
   position: absolute;
   left: 0;
   top: 0;
 }
+.glitch input:nth-child(1), .glitch input:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .glitch:before {
   border: 1px solid #3d3d3d;
   z-index: -1;
@@ -57,6 +70,16 @@ html, body {
   color: #49f300;
   z-index: -2;
 }
+
+.glitch input:nth-child(1) {
+  color: #3d3d3d;
+  z-index: -1;
+}
+.glitch input:nth-child(2) {
+  color: #49f300;
+  z-index: -2;
+}
+
 .glitch:before, .glitch:after {
   content: "";
   position: absolute;
@@ -71,6 +94,15 @@ html, body {
   animation: glitchy 0.3s ease infinite reverse;
 }
 .glitch:hover:after, .glitch:hover span:nth-child(2) {
+  visibility: visible;
+  animation: glitchy 0.3s ease 0.3s infinite;
+}
+
+.glitch:hover:before, .glitch:hover input:nth-child(1) {
+  visibility: visible;
+  animation: glitchy 0.3s ease infinite reverse;
+}
+.glitch:hover:after, .glitch:hover input:nth-child(2) {
   visibility: visible;
   animation: glitchy 0.3s ease 0.3s infinite;
 }
