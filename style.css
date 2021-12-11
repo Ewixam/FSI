@@ -1,23 +1,8 @@
-/* html, body {
-  background: black;
-  font-family: 'HACKED','AndaleMono', sans-serif;
-  height: 99vh;
-  display: flex;
-  justify-content: center;
-  overflow-y:hidden;
-  overflow-x:hidden;
+@font-face {
+  font-family: Hacked;
+  src: url(https://hackedfont.com/HACKED.ttf);
 }
-.container {
-  transform: translateY(-50%);
-  top: 50%;
-  position: relative;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-} */
+
 .btn {
   cursor: pointer;
   font-size: 18px;
