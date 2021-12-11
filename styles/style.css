@@ -1,0 +1,462 @@
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+}
+
+.header{
+    display: flex;
+    height: 9vh;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.titre{
+    color: #49F300;
+    font-family: 'HACKED', sans-serif;
+    font-size: 72px;
+    position: relative;
+    top: 10%;
+    left: 1%;
+}
+
+.header-droite{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.divOblique{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px;
+    justify-content: space-between;
+}
+
+.obliqueDiv{
+    content: " ";
+    background-color: #49F300;
+    height: 119%;
+    width: 0.4%;
+    left: -3%;
+    position: relative;
+    transform: rotateZ(330deg);
+}
+
+.Obliques{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.oblique{
+    content: " ";
+    background-color: #49F300;
+    height: 100%;
+    width: 3px;
+    transform: rotateZ(330deg);
+    margin-right: 3%;
+}
+
+.dedi{
+    color: #49F300;
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    padding: 2.4% 2% 2.2%;
+    width: 20%;
+    height: 50%;
+    justify-content: center;
+    margin-right: 3%;
+}
+h3
+{
+    font-size: 1.8em;
+    color: black;
+    position: relative;
+    top: 20%;
+    left: 10%;
+}
+.trait {
+    width: 100%;
+    height: 0.8%;
+    background: #49F300;
+    margin-bottom: 8%;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+
+.forme
+{
+    height: 6%;
+    background: #49F300;
+    content: " ";
+    clip-path: polygon(42% 0, 53% 102%, 102% 102%, 0 102%, 0 0);
+}
+
+.log
+{
+    width: 33%;
+    height: 50%;
+    height: 100%;
+}
+
+div.Page{
+    display: flex;
+    height: 91vh;
+    padding-top: 5%;
+    border: 2px solid #49F300;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+div.forms{
+
+    display: flex;
+    justify-content: space-around;
+    height: 70%;
+}
+
+input{
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center;
+    font-family: 'Kernel Panic NBP', sans-serif;
+    background:#090909;
+    border: 2px solid #49F300;
+    color: #49F300;
+}
+
+input.inpt{
+    width: 20vw;
+    height: 5vh;
+    margin: 6% 0% 0% 0%;
+    font-size: 150%;
+}
+input.inpt:focus{
+    outline:none;
+}
+
+input.inpt::placeholder{
+    color: #49F300;
+    opacity: 0.30;
+}
+
+.para{
+    color: #525252;
+    opacity: 0.8;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-size: 135%;
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+  }
+  
+
+  .container {
+    transform: translateY(-50%);
+    top: 50%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  
+  .btn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #49f300;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid #49f300;
+    display: inline-block;
+    margin: 12% 0% 0% 0%;
+  }
+  .glitch {
+    position: relative;
+  }
+  .glitch span {
+    display: block;
+    padding: 0.6em 1.5em;
+    font-family: 'Kernel Panic NBP';
+  }
+  .glitch input {
+    display: block;
+    padding: 0.6em 1.5em;
+    font-family: 'Kernel Panic NBP';
+  }
+  
+  .glitch span:nth-child(1), .glitch span:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .glitch input:nth-child(1), .glitch input:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .glitch:before {
+    border: 1px solid #3d3d3d;
+    z-index: -1;
+  }
+  .glitch:after {
+    border: 1px solid #49f300;
+    z-index: -2;
+  }
+  .glitch span:nth-child(1) {
+    color: #3d3d3d;
+    z-index: -1;
+  }
+  .glitch span:nth-child(2) {
+    color: #49f300;
+    z-index: -2;
+  }
+  
+  .glitch input:nth-child(1) {
+    color: #3d3d3d;
+    z-index: -1;
+  }
+  .glitch input:nth-child(2) {
+    color: #49f300;
+    z-index: -2;
+  }
+  
+  .glitch:before, .glitch:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+  }
+  .glitch:hover:before, .glitch:hover span:nth-child(1) {
+    visibility: visible;
+    animation: glitchy 0.3s ease infinite reverse;
+  }
+  .glitch:hover:after, .glitch:hover span:nth-child(2) {
+    visibility: visible;
+    animation: glitchy 0.3s ease 0.3s infinite;
+  }
+  
+  .glitch:hover:before, .glitch:hover input:nth-child(1) {
+    visibility: visible;
+    animation: glitchy 0.3s ease infinite reverse;
+  }
+  .glitch:hover:after, .glitch:hover input:nth-child(2) {
+    visibility: visible;
+    animation: glitchy 0.3s ease 0.3s infinite;
+  }
+  @keyframes glitchy {
+    0% {
+      transform: translate(-2px, 2px);
+   }
+    25% {
+      transform: translate(-2px, -2px);
+   }
+    50% {
+      transform: translate(2px, 2px);
+   }
+    75% {
+      transform: translate(2px, -2px);
+   }
+    to {
+      transform: translate(-2px, 2px);
+   }
+  }
+  
+  #------------------------------------------------------------
+  
+  
+  .glitch-title {
+    color: #49f300;
+    font-size: 100px;
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  @keyframes noise-anim {
+    0% {
+      clip: rect(9px, 9999px, 34px, 0);
+   }
+    5% {
+      clip: rect(93px, 9999px, 6px, 0);
+   }
+    10% {
+      clip: rect(89px, 9999px, 1px, 0);
+   }
+    15% {
+      clip: rect(1px, 9999px, 90px, 0);
+   }
+    20% {
+      clip: rect(37px, 9999px, 1px, 0);
+   }
+    25% {
+      clip: rect(31px, 9999px, 14px, 0);
+   }
+    30% {
+      clip: rect(60px, 9999px, 90px, 0);
+   }
+    35% {
+      clip: rect(1px, 9999px, 86px, 0);
+   }
+    40% {
+      clip: rect(100px, 9999px, 56px, 0);
+   }
+    45% {
+      clip: rect(17px, 9999px, 37px, 0);
+   }
+    50% {
+      clip: rect(97px, 9999px, 98px, 0);
+   }
+    55% {
+      clip: rect(92px, 9999px, 28px, 0);
+   }
+    60% {
+      clip: rect(2px, 9999px, 94px, 0);
+   }
+    65% {
+      clip: rect(61px, 9999px, 66px, 0);
+   }
+    70% {
+      clip: rect(45px, 9999px, 64px, 0);
+   }
+    75% {
+      clip: rect(11px, 9999px, 85px, 0);
+   }
+    80% {
+      clip: rect(68px, 9999px, 3px, 0);
+   }
+    85% {
+      clip: rect(64px, 9999px, 84px, 0);
+   }
+    90% {
+      clip: rect(54px, 9999px, 7px, 0);
+   }
+    95% {
+      clip: rect(8px, 9999px, 44px, 0);
+   }
+    100% {
+      clip: rect(9px, 9999px, 80px, 0);
+   }
+  }
+  .glitch-title:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 red;
+    top: 0;
+    color: #49f300;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+  }
+  @keyframes noise-anim-2 {
+    0% {
+      clip: rect(23px, 9999px, 18px, 0);
+   }
+    5% {
+      clip: rect(17px, 9999px, 25px, 0);
+   }
+    10% {
+      clip: rect(16px, 9999px, 9px, 0);
+   }
+    15% {
+      clip: rect(71px, 9999px, 43px, 0);
+   }
+    20% {
+      clip: rect(76px, 9999px, 48px, 0);
+   }
+    25% {
+      clip: rect(81px, 9999px, 84px, 0);
+   }
+    30% {
+      clip: rect(25px, 9999px, 13px, 0);
+   }
+    35% {
+      clip: rect(44px, 9999px, 97px, 0);
+   }
+    40% {
+      clip: rect(88px, 9999px, 82px, 0);
+   }
+    45% {
+      clip: rect(24px, 9999px, 37px, 0);
+   }
+    50% {
+      clip: rect(62px, 9999px, 82px, 0);
+   }
+    55% {
+      clip: rect(11px, 9999px, 27px, 0);
+   }
+    60% {
+      clip: rect(100px, 9999px, 60px, 0);
+   }
+    65% {
+      clip: rect(23px, 9999px, 6px, 0);
+   }
+    70% {
+      clip: rect(82px, 9999px, 19px, 0);
+   }
+    75% {
+      clip: rect(61px, 9999px, 85px, 0);
+   }
+    80% {
+      clip: rect(62px, 9999px, 95px, 0);
+   }
+    85% {
+      clip: rect(98px, 9999px, 90px, 0);
+   }
+    90% {
+      clip: rect(51px, 9999px, 16px, 0);
+   }
+    95% {
+      clip: rect(78px, 9999px, 2px, 0);
+   }
+    100% {
+      clip: rect(83px, 9999px, 69px, 0);
+   }
+  }
+  .glitch-title:before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 blue;
+    top: 0;
+    color: #49f300;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+  }
+  

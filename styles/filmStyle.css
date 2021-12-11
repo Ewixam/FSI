@@ -1,0 +1,34 @@
+body {
+    background: black;
+    margin: 0;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
+    color:#49F300;
+    height: 99vh;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y:hidden;
+    overflow-x:hidden;
+  }
+
+.Fantastic{
+    background-color: black;
+    color: #49F300;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header{
+
+    top: 0px;
+
+}
+
+.account{
+    position: absolute;
+    top : 10px;
+    left: 1100px;
+
+}
