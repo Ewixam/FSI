@@ -6,6 +6,9 @@ const passR1 = document.getElementById("passReg1");
 const passR2 = document.getElementById("passReg2");
 const passL1 = document.getElementById("passLog");
 const btn = document.querySelectorAll(".btn");
+// DOM
+const dediElement = document.querySelector(".dedi")
+const backgroundSoundElement = new Audio("./assets/audio/background-music.mp3")
 
 btn.forEach(btn => 
 {
@@ -69,3 +72,10 @@ function verifAction(response)
         case "":
     }
 }
+
+dediElement.addEventListener('click', () =>
+{
+    backgroundSoundElement.volume = 0.1
+    backgroundSoundElement.play()
+})
+
