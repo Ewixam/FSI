@@ -3,6 +3,7 @@
     src: url(https://hackedfont.com/HACKED.ttf);
 }
 
+
 .header{
     display: flex;
     height: 9vh;
@@ -47,9 +48,10 @@
 }
 
 .Obliques{
-    height: 100%;
-    width: 100%;
-    display: flex;
+  height: 100%;
+  width: 100%;
+  margin-left: 190px;
+  display: flex;
 }
 
 .oblique{
@@ -197,10 +199,11 @@ input.inpt::placeholder{
     letter-spacing: 0.1em;
     border: 1px solid #49f300;
     display: inline-block;
-    margin: 12% 0% 0% 0%;
+    /* margin: 12% 0% 0% 0%; */
   }
   .glitch {
     position: relative;
+    margin-top: 30px;
   }
   .glitch span {
     display: block;

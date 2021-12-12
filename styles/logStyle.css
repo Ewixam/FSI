@@ -10,3 +10,8 @@ body {
   overflow-y:hidden;
   overflow-x:hidden;
 }
+
+.dedi
+{
+    cursor: pointer;
+}

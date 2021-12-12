@@ -1,19 +1,40 @@
-body {
+body 
+{
     background: black;
     margin: 0;
     font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
     color:#49F300;
+    border: 1px #49F300;
     height: 99vh;
+    justify-content: flex-start;
     display: flex;
-    
-    justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     overflow-y:hidden;
     overflow-x:hidden;
-  }
+}
 
-.Fantastic{
+h1{
+
+    font-size: 50px;
+    margin-top: 24px;
+    margin-left: 860px;
+    margin-bottom: 32px;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
+    text-decoration: underline;
+}
+
+.div{
+    cursor: pointer;
+    font-size: 18px;
+    color: #49f300;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid #49f300;
+}
+
+.categorie{
     background-color: black;
     color: #49F300;
     display: flex;
@@ -21,14 +42,73 @@ body {
 }
 
 .header{
-
     top: 0px;
+}
 
+.buttonsHeader
+{
+    position: absolute;
+    top: 25px;
 }
 
 .account{
-    position: absolute;
-    top : 10px;
-    left: 1100px;
+    right: 680px;
+}
 
+.notif
+{
+    right: 630px;
+}
+
+.buttons
+{
+    position: absolute;
+    right: 0px;
+    margin-top: 14px;
+}
+
+.btn
+{
+    width: 140px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #49f300;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin: 0px 0px 0px 0px;
+}
+
+.content
+{
+    border: 2px #49f300 solid;
+    height: 90vh;
+}
+
+.imgs
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.img
+{
+    margin: 5px;
+}   
+
+.inputSearch{
+    margin-bottom:50px;
+    margin-top:50px;
+    height: 4em;
+    width: 400px;
+    border-radius: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.loop{
+
+    margin-top:40px;
 }
