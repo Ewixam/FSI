@@ -19,7 +19,7 @@
                   $donnee = $req->fetch();
                   $req->closeCursor();
 
-                  if(($password == $donnee['password']) && ($username == $donnee['username']))
+                  if(isset($donnee['username'])==true)
                   {
                         echo("Connected");
                         $_SESSION['username']=$username;
@@ -44,7 +44,7 @@
 
                   $donnee = $req->fetch();
 
-                  if(isset($donnee['username'])==false)
+                  if(isset($donnee['username'])==true)
                   {
                         echo("Account already exist");
                   }

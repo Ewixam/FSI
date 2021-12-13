@@ -54,10 +54,10 @@ function submitForm(data)
     { 
        if(xhr.readyState  == 4)
        {    
-        if(xhr.status  == 200) 
-            console.log(JSON.parse(xhr.responseText));
+        if(xhr.status  == 200)
+            verifAction(xhr.responseText);
         else
-        console.log(xhr.status);
+            console.log(xhr.status);
         }
     }; 
  
@@ -69,7 +69,16 @@ function submitForm(data)
 function verifAction(response)
 {
     switch(response){
-        case "":
+        case "Connected": 
+            window.location.href = "film.html";
+            break;
+        case "Username or password wrong":
+            break;
+        case "Account already exist":
+            break;
+        case "Account Create":
+            window.location.href = "film.html";
+            break;
     }
 }
 
