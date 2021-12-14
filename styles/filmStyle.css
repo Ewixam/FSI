@@ -5,7 +5,7 @@ body
     font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
     color:#49F300;
     border: 1px #49F300;
-    height: 99vh;
+    height: 100vh;
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
@@ -81,7 +81,7 @@ h1{
 .content
 {
     border: 2px #49f300 solid;
-    height: 90vh;
+    height: 91vh;
 }
 
 .imgs

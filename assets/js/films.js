@@ -3,6 +3,7 @@ const humorBtnElement = document.querySelector(".humorBtn")
 const horrorBtnElement = document.querySelector(".horrorBtn")
 const actionBtnElement = document.querySelector(".actionBtn")
 const categorieTextElement = document.querySelector(".categorieText")
+const searchButton = document.querySelector(".searchButton")
 //DIV IMG
 const img = document.querySelector(".imgs")
 
@@ -23,6 +24,7 @@ function submitForm(action)
        {    
         if(xhr.status  == 200){
             let json = JSON.parse(xhr.responseText);
+            img.innerHTML = "";
             json.forEach(element => {
                 img.innerHTML+= "<img class="+element.titre+" src="+element.Image+" width='194px' height='285px'>";
             });
@@ -36,32 +38,47 @@ function submitForm(action)
 
 fictionBtnElement.addEventListener('click', () =>
 {
-    categorieTextElement.textContent = "Fantastic"
-
-    const imgElement = document.querySelector(".img")
-    img.src = "./assets/images/arcane.jpg"
+    categorieTextElement.textContent = "Fiction"
+    submitForm("fiction");
 })
 
 humorBtnElement.addEventListener('click', () =>
 {
-    categorieTextElement.textContent = "Humor"
-
-    const imgElement = document.querySelector(".img")
-    img.src = "./assets/images/avatar.jpg"
+    categorieTextElement.textContent = "Comedie"
+    submitForm("comedie");
 })
 
 horrorBtnElement.addEventListener('click', () =>
 {
-    categorieTextElement.textContent = "Horror"
-
-    const imgElement = document.querySelector(".img")
-    img.src = "./assets/images/bith.jpg"
+    categorieTextElement.textContent = "Horreur"
+    submitForm("horreur");
 })
 
 actionBtnElement.addEventListener('click', () =>
 {
     categorieTextElement.textContent = "Action"
+    submitForm("action");
+})
 
-    const imgElement = document.querySelector(".img")
-    img.src = "./assets/images/bith.jpg"
+searchButton.addEventListener('click', () =>
+{
+    const xhr = new XMLHttpRequest();
+    const inputSearch = document.querySelector(".inputSearch")
+
+    xhr.onreadystatechange  = function()
+    { 
+       if(xhr.readyState  == 4)
+       {    
+        if(xhr.status  == 200){
+            let json = JSON.parse(xhr.responseText);
+            img.innerHTML = "";
+            json.forEach(element => {
+                img.innerHTML+= "<img class="+element.titre+" src="+element.Image+" width='194px' height='285px'>";
+            });
+        }else
+            console.log(xhr.status);
+        }
+    };
+   xhr.open('POST', './assets/php/film.php?action='+inputSearch.value);
+   xhr.send();
 })
