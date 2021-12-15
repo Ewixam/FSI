@@ -15,9 +15,9 @@
 .titre{
     color: #49F300;
     font-family: 'HACKED', sans-serif;
-    font-size: 72px;
+    font-size: 64px;
     position: relative;
-    top: 10%;
+    top: 0%;
     left: 1%;
 }
 
@@ -79,8 +79,8 @@ h3
     font-size: 1.8em;
     color: black;
     position: relative;
-    top: 20%;
     left: 10%;
+    padding-top: 2%;
 }
 .trait {
     width: 100%;
@@ -102,10 +102,10 @@ form
 
 .forme
 {
-    height: 6%;
-    background: #49F300;
-    content: " ";
-    clip-path: polygon(42% 0, 53% 102%, 102% 102%, 0 102%, 0 0);
+  height: fit-content;
+  background: #49F300;
+  content: " ";
+  clip-path: polygon(42% 0, 53% 102%, 102% 102%, 0 102%, 0 0);
 }
 
 .log
