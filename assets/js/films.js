@@ -50,8 +50,8 @@ humorBtnElement.addEventListener('click', () =>
 
 horrorBtnElement.addEventListener('click', () =>
 {
-    categorieTextElement.textContent = "Horreur"
-    submitForm("horreur");
+    categorieTextElement.textContent = "Drame"
+    submitForm("drame");
 })
 
 actionBtnElement.addEventListener('click', () =>

@@ -21,7 +21,7 @@
                   $req = $bdd -> prepare('SELECT titre,annee,`resume`,Image FROM film INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
                   $req->execute(array('genre' => $action)) or die(print_r($req->errorInfo()));
                   break;
-            case 'horreur':
+            case 'drame':
                   $req = $bdd -> prepare('SELECT titre,annee,`resume`,Image FROM film INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
                   $req->execute(array('genre' => $action)) or die(print_r($req->errorInfo()));
                   break;
