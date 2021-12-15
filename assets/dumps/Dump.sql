@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `Cinema` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `Cinema`;
--- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `film` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `film`;
+-- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
--- Host: 51.210.151.13    Database: Cinema
+-- Host: localhost    Database: film
 -- ------------------------------------------------------
--- Server version	5.7.36-0ubuntu0.18.04.1
+-- Server version	5.7.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,13 +18,13 @@ USE `Cinema`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Artiste`
+-- Table structure for table `artiste`
 --
 
-DROP TABLE IF EXISTS `Artiste`;
+DROP TABLE IF EXISTS `artiste`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Artiste` (
+CREATE TABLE `artiste` (
   `idArtiste` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) DEFAULT NULL,
   `prenom` varchar(45) DEFAULT NULL,
@@ -35,23 +35,23 @@ CREATE TABLE `Artiste` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Artiste`
+-- Dumping data for table `artiste`
 --
 
-LOCK TABLES `Artiste` WRITE;
-/*!40000 ALTER TABLE `Artiste` DISABLE KEYS */;
-INSERT INTO `Artiste` VALUES (1,'scott','ridley','1943-01-26',NULL),(2,'Hitchcock','Alfred','1899-02-27',NULL),(3,'Kurosawa','Akira','1910-03-28',NULL),(4,'Woo','John','1946-04-29',NULL),(5,'Tarantino','Quentin','1963-05-30',NULL),(6,'Cameron','James','1954-06-30',NULL),(7,'Tarkovski','Andrei','1932-11-23',NULL),(13,'Henry','Thomas','1971-09-09',NULL),(14,'james','stewart','1908-05-20',NULL),(15,'timera','youssouf','1999-06-11',NULL),(16,'toto','titi','1999-07-01',NULL);
-/*!40000 ALTER TABLE `Artiste` ENABLE KEYS */;
+LOCK TABLES `artiste` WRITE;
+/*!40000 ALTER TABLE `artiste` DISABLE KEYS */;
+INSERT INTO `artiste` VALUES (1,'Cameron','James','1954-08-16',NULL),(2,'Charrue','Pascal','1977-04-08',NULL),(3,'Miyazaki','Hayao ','1941-01-05',NULL),(4,'Hughes','Allen & Albert','1954-08-16',NULL),(5,'Nolan','Christopher ','1970-07-30',NULL),(6,'Cameron','James','1954-06-30',NULL),(7,'Singleton','John ','1968-01-06',NULL),(13,'Henry','Thomas','1971-09-09',NULL),(14,'james','stewart','1908-05-20',NULL),(15,'Snipes','Wesley','1954-08-16',NULL),(16,'toto','titi','1999-07-01',NULL);
+/*!40000 ALTER TABLE `artiste` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Film`
+-- Table structure for table `film`
 --
 
-DROP TABLE IF EXISTS `Film`;
+DROP TABLE IF EXISTS `film`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Film` (
+CREATE TABLE `film` (
   `idFilm` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `titre` varchar(45) DEFAULT NULL,
   `annee` varchar(4) DEFAULT NULL,
@@ -61,29 +61,29 @@ CREATE TABLE `Film` (
   PRIMARY KEY (`idFilm`),
   KEY `fk_Film_Artiste_idx` (`Artiste_idRealisateur`),
   KEY `fk_Film_Genre1_idx` (`Genre_idGenre`),
-  CONSTRAINT `fk_Film_Artiste` FOREIGN KEY (`Artiste_idRealisateur`) REFERENCES `Artiste` (`idArtiste`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Film_Genre1` FOREIGN KEY (`Genre_idGenre`) REFERENCES `Genre` (`idGenre`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Film_Artiste` FOREIGN KEY (`Artiste_idRealisateur`) REFERENCES `artiste` (`idArtiste`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Film_Genre1` FOREIGN KEY (`Genre_idGenre`) REFERENCES `genre` (`idGenre`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Film`
+-- Dumping data for table `film`
 --
 
-LOCK TABLES `Film` WRITE;
-/*!40000 ALTER TABLE `Film` DISABLE KEYS */;
-INSERT INTO `Film` VALUES (1,'alien','1979',NULL,1,6),(2,'Vertigo','1958',NULL,2,8),(3,'Psychose','1960',NULL,2,3),(4,'Kagemusha','1980',NULL,3,9),(9,'lesBTS','2019',NULL,15,1);
-/*!40000 ALTER TABLE `Film` ENABLE KEYS */;
+LOCK TABLES `film` WRITE;
+/*!40000 ALTER TABLE `film` DISABLE KEYS */;
+INSERT INTO `film` VALUES (1,'Avatar','2009',NULL,1,6),(2,'Arcane','2021',NULL,2,8),(3,'Interstellar','2014',NULL,2,3),(4,'Le Voyage de Chihiro','2001',NULL,3,9),(5,'Boyz N The Hood','1991',NULL,7,5),(6,'Spider-Man : No Way Home','2021',NULL,6,2),(7,'House of Gucci','2021',NULL,7,8),(9,'Menace to Society','1993',NULL,4,1);
+/*!40000 ALTER TABLE `film` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Genre`
+-- Table structure for table `genre`
 --
 
-DROP TABLE IF EXISTS `Genre`;
+DROP TABLE IF EXISTS `genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Genre` (
+CREATE TABLE `genre` (
   `idGenre` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `libelle` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idGenre`)
@@ -91,23 +91,23 @@ CREATE TABLE `Genre` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Genre`
+-- Dumping data for table `genre`
 --
 
-LOCK TABLES `Genre` WRITE;
-/*!40000 ALTER TABLE `Genre` DISABLE KEYS */;
-INSERT INTO `Genre` VALUES (1,'action'),(2,'comique'),(3,'horreur'),(4,'comedie'),(5,'dramatique'),(6,'fiction'),(7,'peplum'),(8,'thriller'),(9,'guerre');
-/*!40000 ALTER TABLE `Genre` ENABLE KEYS */;
+LOCK TABLES `genre` WRITE;
+/*!40000 ALTER TABLE `genre` DISABLE KEYS */;
+INSERT INTO `genre` VALUES (1,'Crime'),(2,'comique'),(3,'Aventure'),(4,'comedie'),(5,'dramatique'),(6,'fiction'),(7,'peplum'),(8,'thriller'),(9,'fantasy');
+/*!40000 ALTER TABLE `genre` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Internaute`
+-- Table structure for table `internaute`
 --
 
-DROP TABLE IF EXISTS `Internaute`;
+DROP TABLE IF EXISTS `internaute`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Internaute` (
+CREATE TABLE `internaute` (
   `idInternaute` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idInternaute`)
@@ -115,70 +115,70 @@ CREATE TABLE `Internaute` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Internaute`
+-- Dumping data for table `internaute`
 --
 
-LOCK TABLES `Internaute` WRITE;
-/*!40000 ALTER TABLE `Internaute` DISABLE KEYS */;
-INSERT INTO `Internaute` VALUES (1,'tobji'),(2,'madani');
-/*!40000 ALTER TABLE `Internaute` ENABLE KEYS */;
+LOCK TABLES `internaute` WRITE;
+/*!40000 ALTER TABLE `internaute` DISABLE KEYS */;
+INSERT INTO `internaute` VALUES (1,'tobji'),(2,'madani');
+/*!40000 ALTER TABLE `internaute` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Jouer`
+-- Table structure for table `jouer`
 --
 
-DROP TABLE IF EXISTS `Jouer`;
+DROP TABLE IF EXISTS `jouer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Jouer` (
+CREATE TABLE `jouer` (
   `Artiste_idArtiste` int(10) unsigned NOT NULL,
   `Film_idFilm` int(10) unsigned NOT NULL,
   `role` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Artiste_idArtiste`,`Film_idFilm`),
   KEY `fk_Jouer_idFilm_idx` (`Film_idFilm`),
   KEY `fk_Jouer_idArtiste_idx` (`Artiste_idArtiste`),
-  CONSTRAINT `fk_Jouer_idArtiste` FOREIGN KEY (`Artiste_idArtiste`) REFERENCES `Artiste` (`idArtiste`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Jouer_idFilm` FOREIGN KEY (`Film_idFilm`) REFERENCES `Film` (`idFilm`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Jouer_idArtiste` FOREIGN KEY (`Artiste_idArtiste`) REFERENCES `artiste` (`idArtiste`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Jouer_idFilm` FOREIGN KEY (`Film_idFilm`) REFERENCES `film` (`idFilm`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Jouer`
+-- Dumping data for table `jouer`
 --
 
-LOCK TABLES `Jouer` WRITE;
-/*!40000 ALTER TABLE `Jouer` DISABLE KEYS */;
-INSERT INTO `Jouer` VALUES (13,1,'eliott'),(14,2,'Scottie');
-/*!40000 ALTER TABLE `Jouer` ENABLE KEYS */;
+LOCK TABLES `jouer` WRITE;
+/*!40000 ALTER TABLE `jouer` DISABLE KEYS */;
+INSERT INTO `jouer` VALUES (13,1,'eliott'),(14,2,'Scottie');
+/*!40000 ALTER TABLE `jouer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Noter`
+-- Table structure for table `noter`
 --
 
-DROP TABLE IF EXISTS `Noter`;
+DROP TABLE IF EXISTS `noter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Noter` (
+CREATE TABLE `noter` (
   `Internaute_idInternaute` int(10) unsigned NOT NULL,
   `Film_idFilm` int(10) unsigned NOT NULL,
   PRIMARY KEY (`Internaute_idInternaute`,`Film_idFilm`),
   KEY `fk_Noter_idFilm_idx` (`Film_idFilm`),
   KEY `fk_Noter_idInternaute_idx` (`Internaute_idInternaute`),
-  CONSTRAINT `fk_Noter_idFilm` FOREIGN KEY (`Film_idFilm`) REFERENCES `Film` (`idFilm`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Noter_idInternaute` FOREIGN KEY (`Internaute_idInternaute`) REFERENCES `Internaute` (`idInternaute`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Noter_idFilm` FOREIGN KEY (`Film_idFilm`) REFERENCES `film` (`idFilm`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Noter_idInternaute` FOREIGN KEY (`Internaute_idInternaute`) REFERENCES `internaute` (`idInternaute`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Noter`
+-- Dumping data for table `noter`
 --
 
-LOCK TABLES `Noter` WRITE;
-/*!40000 ALTER TABLE `Noter` DISABLE KEYS */;
-INSERT INTO `Noter` VALUES (2,1);
-/*!40000 ALTER TABLE `Noter` ENABLE KEYS */;
+LOCK TABLES `noter` WRITE;
+/*!40000 ALTER TABLE `noter` DISABLE KEYS */;
+INSERT INTO `noter` VALUES (2,1);
+/*!40000 ALTER TABLE `noter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -190,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-11 19:16:28
+-- Dump completed on 2021-12-15 14:15:25
