@@ -21,13 +21,13 @@
 
                   if(isset($donnee['username'])==true)
                   {
-                        echo("Connected");
                         $_SESSION['username']=$username;
+                        echo("Connected");
                   }
                   else
                   {
-                        echo("Username or password wrong");
                         $_SESSION['username']=$username;
+                        echo("Username or password wrong");
                   }
             }elseif($_GET['action'] == "Register")
             {
@@ -53,9 +53,9 @@
                         $req = $bdd -> prepare('INSERT INTO `cinema`.`internaute` (`username`, `password`) VALUES (:user, :pass)');
                         $req->execute(array('pass' => $password,'user' => $username)) or die(print_r($req->errorInfo()));
                         $req->closeCursor();
-
-                        echo("Account Create");
                         $_SESSION['username']=$username;
+                        echo("Account Create");
+                        
                   }
             }
       }

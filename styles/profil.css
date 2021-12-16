@@ -1,0 +1,102 @@
+body 
+{
+    background: black;
+    margin: 0;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
+    color:#49F300;
+    border: 1px #49F300;
+    height: 100vh;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+
+.content
+{
+      border: 2px #49f300 solid;
+      height: 100%;
+      padding-top: 5px;
+}
+
+.lesNote
+{
+      display: flex;
+      flex-wrap: wrap;
+}
+
+.film
+{
+      display: flex;
+      height: 122px;
+      width: 45%;
+      margin: 20px 30px;
+      padding: 8px;
+      border: 1px solid #49f300;
+}
+
+img
+{
+      margin-right: 3%;
+      /* width: 9vw; */
+      /* height: auto; */
+}
+
+.note-content
+{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+}
+
+h4
+{
+      font-size: 2em;
+      font-weight: bold;
+}
+
+.note-commentaire
+{
+      display: flex;
+      height: inherit;
+      overflow-y: hidden;
+      flex-direction: row;
+      justify-content: space-around;
+}
+
+.commentaire
+{
+      width: 78%;
+      overflow-y: auto;
+      height: auto;
+}
+
+.commentaire::-webkit-scrollbar
+{
+      width: 5px;
+}
+
+.commentaire::-webkit-scrollbar-track
+{
+      background: #00000000;
+}
+
+.commentaire::-webkit-scrollbar-thumb
+{
+      background: #49F300;
+}
+
+.commentaire::-webkit-scrollbar-thumb
+{
+      background: #46e900;
+}
+
+.note
+{
+      width: auto;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+}

@@ -207,7 +207,7 @@ input.inpt::placeholder{
   }
   .glitch span {
     display: block;
-    padding: 0.5% 1%;
+    padding: 0.6em 1.5em;
     font-family: 'Kernel Panic NBP';
   }
   .glitch input {
