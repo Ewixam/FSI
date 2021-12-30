@@ -1,6 +1,6 @@
 const fictionBtnElement = document.querySelector(".fictionBtn")
 const humorBtnElement = document.querySelector(".humorBtn")
-const horrorBtnElement = document.querySelector(".horrorBtn")
+const horrorBtnElement = document.querySelector(".dramaBtn")
 const actionBtnElement = document.querySelector(".actionBtn")
 const categorieTextElement = document.querySelector(".categorieText")
 const searchButton = document.querySelector(".searchButton")

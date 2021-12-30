@@ -14,16 +14,6 @@ body
     overflow-x:hidden;
 }
 
-h1{
-
-    font-size: 50px;
-    margin-top: 24px;
-    margin-left: 860px;
-    margin-bottom: 32px;
-    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
-    text-decoration: underline;
-}
-
 .div{
     cursor: pointer;
     font-size: 18px;
@@ -64,24 +54,24 @@ h1{
 {
     position: absolute;
     right: 0px;
-    margin-top: 14px;
+    top: 0.8%;
 }
 
 .btn
 {
     width: 140px;
-    cursor: pointer;
     font-size: 18px;
     color: #49f300;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
     text-transform: uppercase;
-    margin: 0px 0px 0px 0px;
+    margin: 0.5em;
+    padding: 0.5em 2em;
 }
 
 .content
 {
-    border: 2px #49f300 solid;
-    height: 91vh;
+    /* border: 2px #49f300 solid; */
+    height: 89vh;
     padding-top: 5px;
 }
 

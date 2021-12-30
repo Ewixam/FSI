@@ -13,12 +13,13 @@
 }
 
 .titre{
-    color: #49F300;
-    font-family: 'HACKED', sans-serif;
-    font-size: 64px;
-    position: relative;
-    top: 0%;
-    left: 1%;
+  color: #49F300;
+  font-family: 'HACKED', sans-serif;
+  font-size: 3em;
+  position: relative;
+  /* top: 0%; */
+  /* left: 1%; */
+  margin-right: 2%;
 }
 
 .header-droite{
@@ -47,7 +48,7 @@
     transform: rotateZ(330deg);
 }
 
-.Obliques{
+/* .Obliques{
   height: 100%;
   width: 100%;
   margin-left: 190px;
@@ -61,7 +62,7 @@
     width: 3px;
     transform: rotateZ(330deg);
     margin-right: 3%;
-}
+} */
 
 .dedi{
     color: #49F300;

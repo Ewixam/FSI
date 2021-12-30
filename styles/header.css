@@ -1,0 +1,115 @@
+@font-face {
+      font-family: Hacked;
+      src: url(https://hackedfont.com/HACKED.ttf);
+  }
+
+body 
+{
+    background: black;
+    font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
+    color:#49F300;
+    border: 1px #49F300;
+    height: 100vh;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h1
+{
+      font-family: HACKED;
+      font-size: 3em;
+}
+
+header
+{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 8vh;
+      margin-bottom: 1%;
+}
+
+/* .titre{
+      color: #49F300;
+      font-family: 'HACKED', sans-serif;
+      font-size: 1em;
+      position: relative;
+      /* top: 0%; */
+      /* left: 1%; 
+      margin-right: 2%;
+} */
+
+.div-boutton 
+{
+      display: flex;
+      display: flex;
+      width: 69%;
+      border-bottom: 2px solid #49F300;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5em 0em;
+      height: 100%;
+}
+
+.boutton
+{
+      /* width: 140px; */
+      /* font-size: 1em; */
+      color: #49F300;
+      font-family: 'Kernel Panic NBP','AndaleMono', sans-serif;
+      text-transform: uppercase;
+      margin: 0.5em;
+      padding: 0.5em 2em;
+      border: #49F300 1px solid;
+}
+
+.boutton {
+      color: #49F300;
+      transition: 0.25s;
+    }
+
+.boutton:hover, .boutton:focus {
+      border-color: #49F300;
+      color: #000;
+    }
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 7.5em 0 0 0 #49F300;
+}
+
+.oblique-profil
+{
+      height: 100%;
+      width: 14%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+}
+
+.Obliques{
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+.oblique{
+      content: " ";
+      background-color: #49F300;
+      height: 100%;
+      width: 3px;
+      transform: rotateZ(330deg);
+      margin-right: 30%;
+    }
+
+.end-div{
+      content: " ";
+      background-color: #49F300;
+      height: 112%;
+      width: 3px;
+      transform: rotateZ(330deg);
+      margin: 1%;
+}
