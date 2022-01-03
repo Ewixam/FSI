@@ -9,55 +9,70 @@ const img = document.querySelector(".imgs")
 
 window.onload = init();
 
-function init()
+async function init()
 {
-    submitForm("init")
+    let films = await submitForm("init")
+    console.log(films);
+    clickImage(films);
 }
 
 function submitForm(action)
 { 
-    const xhr = new XMLHttpRequest();
+    return new Promise((resolve, reject) => {
 
-    xhr.onreadystatechange  = function()
-    { 
-       if(xhr.readyState  == 4)
-       {    
-        if(xhr.status  == 200){
-            let json = JSON.parse(xhr.responseText);
-            img.innerHTML = "";
-            json.forEach(element => {
-                img.innerHTML+= "<img class="+element.titre+" src="+element.Image+" width='194px' height='285px'>";
-            });
-        }else
-            console.log(xhr.status);
-        }
-    };
-   xhr.open('POST', './assets/php/film.php?action='+action);
-   xhr.send();
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange  = function()
+        { 
+        if(xhr.readyState  == 4)
+        {    
+            if(xhr.status  == 200){
+                let json = JSON.parse(xhr.responseText);
+                img.innerHTML = "";
+                if(json[1]==1054){
+                    img.innerHTML = "Aucun contenu disponible";
+                }else{
+                    json.forEach(element => {
+                        img.innerHTML+= "<img class=\""+'film-Image '+element.titre+"\" src="+element.Image+" width='194px' height='285px'>";
+                    });
+                }
+                resolve(json);
+            }else
+                console.log(xhr.status);
+                reject(xhr.statusText);
+            }
+        };
+        xhr.open('POST', './assets/php/film.php?action='+action);
+        xhr.send();
+    });
 } 
 
-fictionBtnElement.addEventListener('click', () =>
+fictionBtnElement.addEventListener('click', async () =>
 {
     categorieTextElement.textContent = "Fiction"
-    submitForm("fiction");
+    let films = await submitForm("fiction")
+    clickImage(films)
 })
 
-humorBtnElement.addEventListener('click', () =>
+humorBtnElement.addEventListener('click', async () =>
 {
     categorieTextElement.textContent = "Comedie"
-    submitForm("comedie");
+    let films = await submitForm("comedie")
+    clickImage(films)
 })
 
-horrorBtnElement.addEventListener('click', () =>
+horrorBtnElement.addEventListener('click', async () =>
 {
     categorieTextElement.textContent = "Drame"
-    submitForm("drame");
+    let films = await submitForm("drame")
+    clickImage(films)
 })
 
-actionBtnElement.addEventListener('click', () =>
+actionBtnElement.addEventListener('click', async () =>
 {
     categorieTextElement.textContent = "Action"
-    submitForm("action");
+    let films = await submitForm("action")
+    clickImage(films)
 })
 
 searchButton.addEventListener('click', () =>
@@ -73,7 +88,7 @@ searchButton.addEventListener('click', () =>
             let json = JSON.parse(xhr.responseText);
             img.innerHTML = "";
             json.forEach(element => {
-                img.innerHTML+= "<img class="+element.titre+" src="+element.Image+" width='194px' height='285px'>";
+                img.innerHTML+= "<img class=\""+'film-Image '+element.titre+"\" src="+element.Image+" width='194px' height='285px'>";
             });
         }else
             console.log(xhr.status);

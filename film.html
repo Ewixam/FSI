@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <link rel="stylesheet" type="text/css" href="./styles/header.css">
     <link rel="stylesheet" type="text/css" href="./styles/filmStyle.css">
+    <link rel="stylesheet" type="text/css" href="./styles/modal.css">
     <title>FSI - Films</title>
 </head>
 <body>
@@ -56,9 +57,35 @@
                 <h2 class="categorieText" ></h2>
             </form>
         </div>
+
+        <!-- IMAGE FILM -->
         <div class="imgs"></div>
 
-      <script type="text/javascript" src="./assets/js/films.js"></script>
+        <!-- POP UP -->
+        <div class="modal" id="modal">
+            <div class="modal-image">Example Modal</div>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h4 class="modal-header title">T</h4>
+                    <button data-close-button class="close-button">&times;</button>
+                  </div>
+                <div class="modal-film-info">
+                    <h5>Resume: </h5>
+                    <p class="modal-film-info-resume"></p>
+                    <h5>Annee: </h5>
+                    <p class="modal-film-info-annee"></p>
+                    <h5>Genre: </h5>
+                    <p class="modal-film-info-genre"></p>
+                    <h5>Auteur: </h5>
+                    <p class="modal-film-info-auteur"></p>
+                </div>
+            </div>
+          </div>
+        <div id="overlay"></div>
+
+        <script type="text/javascript" src="./assets/js/modal.js"></script>
+        <script type="text/javascript" src="./assets/js/films.js"></script>
+      
 
     </div>
 

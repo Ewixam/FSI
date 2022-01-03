@@ -33,7 +33,7 @@ $req->closeCursor();
 </head>
 <body>
       <header>
-            <div class="titre"><h1>FILMSTREAMINGILLEGAL</h1></div>
+            <div class="titre glitch-title" data-text="FILMSTREAMINGILLEGAL">FILMSTREAMINGILLEGAL</div>
             <div class="end-div"></div>
             <div class="div-boutton">
                   <div class="oblique-profil">
