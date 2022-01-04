@@ -1,6 +1,10 @@
 <?php
       session_start();
-      $user = $_SESSION['username'];
+      if(isset($_SESSION['username'])){
+            $user = $_SESSION['username'];
+      }else{
+            header("login.html");
+      }
       $action = $_GET['action'];
       try{
             $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
@@ -31,8 +35,8 @@
                   $req->execute(array('genre' => $action)) /*or die($req->errorInfo());*/;
                   break;
             case 'fav':
-                  $req = $bdd -> prepare('INSERT INTO noter ( id,userid, timestamp) SELECT o.userid , o.timestamp FROM users u INNER JOIN orders o ON  o.userid = u.id');
-                  $req->execute(array('genre' => $action)) /*or die($req->errorInfo());*/;
+                  $req = $bdd -> prepare('INSERT INTO noter ( Internaute_idInternaute,Film_idFilm) SELECT internaute.idInternaute , film.idFilm FROM noter INNER JOIN internaute INNER JOIN film WHERE internaute.username = :user and film.titre = :title');
+                  $req->execute(array('user' => $user, 'title'=> $_GET['title'])) /*or die($req->errorInfo());*/;
                   break;
             default:
                   $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM cinema.film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre ON genre.idGenre=film.Genre_idGenre WHERE titre = :titre');
@@ -46,7 +50,14 @@
             $req->closeCursor();
             $donnee = json_encode($donnee);
             echo($donnee);
-      }elseif($req->errorInfo()[1]==1054){
+      }elseif($req->errorInfo()[1]==1054)
+      {
+            $error = $req->errorInfo();
+            $req->closeCursor();
+            $error = json_encode($error);
+            echo($error);
+      }elseif($req->errorInfo()[1]==1062)
+      {
             $error = $req->errorInfo();
             $req->closeCursor();
             $error = json_encode($error);

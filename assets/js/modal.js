@@ -3,6 +3,7 @@ function clickImage(x) {
       const closeModalButtons = document.querySelectorAll('[data-close-button]')
       const overlay = document.getElementById('overlay')
       const modal = document.querySelector('#modal');
+      const btnFav = document.querySelector(".buttonFav")
 
       openModalButtons.forEach(image => {
             image.addEventListener('click', () => {
@@ -34,6 +35,30 @@ function clickImage(x) {
                   const modal = button.closest('.modal')
                   closeModal(modal)
             })
+      })
+
+      btnFav.addEventListener('click',() =>
+      {
+            const xhr = new XMLHttpRequest();
+            let title =document.querySelector('.modal-header .title').innerText
+
+            xhr.onreadystatechange  = function()
+            { 
+                  if(xhr.readyState  == 4)
+                  {    
+                        if(xhr.status  == 200){
+                              let rslt = JSON.parse(xhr.responseText);
+                              if(rslt[1]==1062){
+                                    console.log("Déja favoris")
+                              }else{
+                                    console.log("Ajouter au favoris")
+                              }
+                        }else
+                              console.log(xhr.status);
+                  }
+            }
+            xhr.open('POST', './assets/php/film.php?action=fav&title='+title);
+            xhr.send();
       })
 
       function openModal(modal) {
