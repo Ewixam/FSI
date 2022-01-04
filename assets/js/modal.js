@@ -6,9 +6,10 @@ function clickImage(x) {
 
       openModalButtons.forEach(image => {
             image.addEventListener('click', () => {
-                  console.log(image.classList);
+                  console.log(image.getAttribute("data-d"));
+                  console.log(x);
                   x.forEach(film => {
-                        if (image.classList[1] == film.titre) {
+                        if (image.getAttribute("data-d") == film.titre) {
                               document.querySelector('.modal-image').innerHTML = "<img class=\"" + 'modal-Image ' + film.titre + "\" src=" + film.Image + " width='275px' height='420px'>";
                               document.querySelector('.modal-header .title').innerText = film.titre
                               document.querySelector('.modal-film-info-resume').innerHTML = film.resume

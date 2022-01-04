@@ -33,7 +33,7 @@ function submitForm(action)
                     img.innerHTML = "Aucun contenu disponible";
                 }else{
                     json.forEach(element => {
-                        img.innerHTML+= "<img class=\""+'film-Image '+element.titre+"\" src="+element.Image+" width='194px' height='285px'>";
+                        img.innerHTML+= "<img class='film-Image' data-d='"+element.titre+"' src="+element.Image+" width='194px' height='285px'>";
                     });
                 }
                 resolve(json);
@@ -88,7 +88,7 @@ searchButton.addEventListener('click', () =>
             let json = JSON.parse(xhr.responseText);
             img.innerHTML = "";
             json.forEach(element => {
-                img.innerHTML+= "<img class=\""+'film-Image '+element.titre+"\" src="+element.Image+" width='194px' height='285px'>";
+                img.innerHTML+= "<img class='film-Image' data-d='"+element.titre+"' src="+element.Image+" width='194px' height='285px'>";
             });
         }else
             console.log(xhr.status);

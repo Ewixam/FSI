@@ -18,19 +18,19 @@
                   $req->execute(array('genre' => $action)) or die(print_r($req->errorInfo()));
                   break;
             case 'comedie':
-                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
+                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
                   $req->execute(array('genre' => $action)) or die(print_r($req->errorInfo()));
                   break;
             case 'drame':
-                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
+                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
                   $req->execute(array('genre' => $action)) /*or die($req->errorInfo())*/;
                   break;
             case 'action':
-                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
+                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
                   $req->execute(array('genre' => $action)) /*or die($req->errorInfo());*/;
                   break;
             default:
-                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film WHERE titre = :titre');
+                  $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM cinema.film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre ON genre.idGenre=film.Genre_idGenre WHERE titre = :titre');
                   $req->execute(array('titre' => $_GET['action'])) /*or die(print_r($req->errorInfo()));*/;
                   break;
       }
