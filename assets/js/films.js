@@ -6,6 +6,7 @@ const categorieTextElement = document.querySelector(".categorieText")
 const searchButton = document.querySelector(".searchButton")
 //DIV IMG
 const img = document.querySelector(".imgs")
+const btnFav = document.querySelector(".buttonFav")
 
 window.onload = init();
 
@@ -15,6 +16,7 @@ async function init()
     console.log(films);
     clickImage(films);
 }
+
 
 function submitForm(action)
 { 
@@ -46,6 +48,7 @@ function submitForm(action)
         xhr.send();
     });
 } 
+
 
 fictionBtnElement.addEventListener('click', async () =>
 {
@@ -97,3 +100,26 @@ searchButton.addEventListener('click', () =>
    xhr.open('POST', './assets/php/film.php?action='+inputSearch.value);
    xhr.send();
 })
+
+
+
+btnFav.addEventListener('click',() =>
+{
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange  = function()
+    { 
+       if(xhr.readyState  == 4)
+       {    
+        if(xhr.status  == 200){
+            let json = JSON.parse(xhr.responseText);
+           
+        }else
+            console.log(xhr.status);
+        }
+    };
+   xhr.open('POST', './assets/php/film.php?action=fav');
+   xhr.send();
+ 
+})
+

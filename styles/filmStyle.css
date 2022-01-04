@@ -134,3 +134,23 @@ h5{
     font-weight: bold;
     font-size: 1.2em;
 }
+
+.bouttonFav{
+    display: flex;
+    border: 1px solid #49F300;
+    margin-top: 84px;
+    margin-left: 84px;
+    margin-right: 84px;
+    cursor: pointer;
+
+}
+
+.love{
+    display: flex;
+    margin-left: 144px;
+    margin-top: 23px;
+}
+
+a{
+    text-decoration: none;
+}

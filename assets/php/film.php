@@ -1,5 +1,6 @@
 <?php
       session_start();
+      $user = $_SESSION['username'];
       $action = $_GET['action'];
       try{
             $bdd = new PDO('mysql:host=localhost;dbname=cinema','root','');
@@ -27,6 +28,10 @@
                   break;
             case 'action':
                   $req = $bdd -> prepare('SELECT titre,annee,resume,Image,nom,prenom,dateNaiss,libelle FROM film INNER JOIN artiste ON artiste.idArtiste= film.Artiste_idRealisateur INNER JOIN genre on film.Genre_idGenre = genre.idGenre and genre.libelle = :genre ');
+                  $req->execute(array('genre' => $action)) /*or die($req->errorInfo());*/;
+                  break;
+            case 'fav':
+                  $req = $bdd -> prepare('INSERT INTO noter ( id,userid, timestamp) SELECT o.userid , o.timestamp FROM users u INNER JOIN orders o ON  o.userid = u.id');
                   $req->execute(array('genre' => $action)) /*or die($req->errorInfo());*/;
                   break;
             default:
