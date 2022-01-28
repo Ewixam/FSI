@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['username'])){
       $username = $_SESSION['username'];
+      $groupe = $_SESSION['groupe'];
 }
 
 try{
@@ -10,11 +11,12 @@ try{
 catch(Exception $e){
       die('Erreur de connexion : '.$e->getMessage());
 }
-$req = $bdd -> prepare('SELECT titre,annee,resume,Image,username FROM cinema.film INNER JOIN noter ON noter.Film_idFilm= film.idFilm INNER JOIN internaute ON noter.Internaute_idInternaute=internaute.idInternaute and internaute.username = :user');
-$req->execute(array('user' => $username)) or die(print_r($req->errorInfo()));
-
-$donnee = $req->fetchAll(PDO::FETCH_ASSOC);
-$req->closeCursor();
+if($groupe == "user"){
+      $req = $bdd -> prepare('SELECT titre,annee,resume,Image,username FROM cinema.film INNER JOIN noter ON noter.Film_idFilm= film.idFilm INNER JOIN internaute ON noter.Internaute_idInternaute=internaute.idInternaute and internaute.username = :user');
+      $req->execute(array('user' => $username)) or die(print_r($req->errorInfo()));
+      $donnee = $req->fetchAll(PDO::FETCH_ASSOC);
+      $req->closeCursor();
+}
 ?>
 <html lang="fr">
 <head>
@@ -59,6 +61,7 @@ $req->closeCursor();
             <h2><?php echo($username); ?></h2>
             <div class="lesNote">
             <?php 
+            if($groupe == "user"){
                   foreach($donnee as $note){
                         echo '
                         <div class="film">
@@ -80,6 +83,17 @@ $req->closeCursor();
                         </div>
                         ';
                   }
+            }elseif($groupe == "admin"){
+                  echo '
+                        <select class="action-select">
+                              <option value="">Choisir une action</option>
+                              <option value="add">Ajouter un film</option>
+                              <option value="del">Supprimer un film</option>
+                              <!-- <option value="">Choisir une action</option> -->
+                        </select>
+                  ';
+                  echo '<script type="text/javascript" src="./assets/js/admin.js"></script>';
+            }
             ?>
 
                   <!-- <div class="film">

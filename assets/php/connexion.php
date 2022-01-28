@@ -13,7 +13,7 @@
                   catch(Exception $e){
                         die('Erreur de connexion : '.$e->getMessage());
                   }
-                  $req = $bdd -> prepare('SELECT password,username FROM internaute WHERE password=:pass AND username=:user');
+                  $req = $bdd -> prepare('SELECT password,username,groupe FROM internaute WHERE password=:pass AND username=:user');
                   $req->execute(array('pass' => $password,'user' => $username)) or die(print_r($req->errorInfo()));
 
                   $donnee = $req->fetch();
@@ -22,11 +22,11 @@
                   if(isset($donnee['username'])==true)
                   {
                         $_SESSION['username']=$username;
+                        $_SESSION['groupe']=$donnee['groupe'];
                         echo("Connected");
                   }
                   else
                   {
-                        $_SESSION['username']=$username;
                         echo("Username or password wrong");
                   }
             }elseif($_GET['action'] == "Register")
