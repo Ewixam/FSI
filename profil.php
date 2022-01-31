@@ -88,11 +88,12 @@ if($groupe == "user"){
                         <select class="action-select">
                               <option value="">Choisir une action</option>
                               <option value="add">Ajouter un film</option>
+                              <option value="addA">Ajouter un artiste</option>
                               <option value="del">Supprimer un film</option>
                               <!-- <option value="">Choisir une action</option> -->
                         </select>
+                        <form id="formADD" method="post"></form>
                   ';
-                  echo '<script type="text/javascript" src="./assets/js/admin.js"></script>';
             }
             ?>
 
@@ -124,5 +125,6 @@ if($groupe == "user"){
                   </div> -->
             </div>
       </div>
+      <script type="text/javascript" src="./assets/js/admin.js"></script>
 </body>
 </html>

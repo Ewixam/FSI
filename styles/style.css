@@ -133,6 +133,10 @@ div.forms{
     height: 70%;
 }
 
+select{
+  margin: 10px 10px;
+}
+
 input{
     display: flex;
     padding-left: 2%;
@@ -147,16 +151,44 @@ input{
 input.inpt{
     width: 20vw;
     height: 5vh;
-    margin: 6% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
     font-size: 150%;
 }
 input.inpt:focus{
     outline:none;
+    background:#090909;
 }
 
 input.inpt::placeholder{
     color: #49F300;
     opacity: 0.30;
+}
+
+textarea{
+  display: flex;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: center;
+  font-family: 'Kernel Panic NBP', sans-serif;
+  background:#090909;
+  border: 2px solid #49F300;
+  color: #49F300;
+}
+
+textarea.inpt{
+  width: 20vw;
+  height: 12vh;
+  margin: 3% 0% 0% 0%;
+  font-size: 150%;
+}
+textarea.inpt:focus{
+  outline:none;
+  background:#090909;
+}
+
+textarea.inpt::placeholder{
+  color: #49F300;
+  opacity: 0.30;
 }
 
 .para{
